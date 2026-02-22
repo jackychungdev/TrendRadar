@@ -554,15 +554,14 @@ def send_to_telegram(
     # 统一添加批次头部（已预留空间，不会超限）
     batches = add_batch_headers(batches, "telegram", batch_size)
 
-    print(f"{log_prefix}消息分为 {len(batches)} 批次发送 [{report_type}]")
-
+    print(f"{log_prefix} chat_id: {chat_id} 消息分为 {len(batches)} 批次发送 [{report_type}]")
+    print(f"bot_token: {bot_token}")
     # 逐批发送
     for i, batch_content in enumerate(batches, 1):
         content_size = len(batch_content.encode("utf-8"))
         print(
             f"发送{log_prefix}第 {i}/{len(batches)} 批次，大小：{content_size} 字节 [{report_type}]"
         )
-
         payload = {
             "chat_id": chat_id,
             "text": batch_content,
@@ -587,6 +586,8 @@ def send_to_telegram(
                     )
                     return False
             else:
+                description = response.json().get("description")
+                print(f"response: {description}")
                 print(
                     f"{log_prefix}第 {i}/{len(batches)} 批次发送失败 [{report_type}]，状态码：{response.status_code}"
                 )

@@ -41,7 +41,7 @@ app:
 # ===============================================================
 schedule:
   enabled: true                         # 是否启用调度系统
-  preset: "office_hours"             # 预设模板名称（见上方说明）
+  preset: "morning_evening"             # 预设模板名称（见上方说明）
 
 
 # ===============================================================
@@ -61,8 +61,20 @@ platforms:
       name: "百度热搜"
     - id: "wallstreetcn-hot"
       name: "华尔街见闻"
+    - id: "thepaper"
+      name: "澎湃新闻"
+    - id: "bilibili-hot-search"
+      name: "bilibili 热搜"
     - id: "cls-hot"
       name: "财联社热门"
+    - id: "ifeng"
+      name: "凤凰网"
+    - id: "tieba"
+      name: "贴吧"
+    - id: "weibo"
+      name: "微博"
+    - id: "douyin"
+      name: "抖音"
     - id: "zhihu"
       name: "知乎"
 
@@ -92,7 +104,7 @@ rss:
   freshness_filter:
     enabled: true                     # 是否启用新鲜度过滤（默认启用）
 
-    max_age_days: 1                   # 最大文章年龄（天）
+    max_age_days: 3                   # 最大文章年龄（天）
                                       # - 正整数：只推送 N 天内的文章
                                       # - 0：禁用过滤，推送所有文章
 
@@ -104,7 +116,7 @@ rss:
     - id: "hacker-news"
       name: "Hacker News"
       url: "https://hnrss.org/frontpage"
-      #max_age_days: 1               # 示例：只推送1天内的文章
+      # max_age_days: 1               # 示例：只推送1天内的文章
 
     - id: "ruanyifeng"
       name: "阮一峰的网络日志"
@@ -143,7 +155,7 @@ rss:
 #    • 适用场景：避免重复信息干扰
 # ===============================================================
 report:
-  mode: "incremental"                     # 可选: daily | current | incremental
+  mode: "current"                     # 可选: daily | current | incremental
                                       # ⚠️ 开启调度系统后，此值会被当前时间段的 report_mode 覆盖
 
 
@@ -206,7 +218,7 @@ display:
   #   - AI 分析：由 ai.include_standalone 开关控制，将完整数据送入 AI 做深度分析
   # 两者共享此处的平台/RSS 配置，但开关互相独立（可只开 AI 分析、不推送展示）
   standalone:
-    platforms: [] # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
+    platforms: ["zhihu", "wallstreetcn-hot"]     # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
     rss_feeds: []                     # RSS 源 ID 列表（如 ["hacker-news"]）
     max_items: 20                     # 每个源最多展示条数（0=不限制）
 
@@ -251,7 +263,7 @@ notification:
 
     telegram:
       bot_token: "6300921956:AAHwT-FhyiVXipdT_BIQHavPs-6rie5LpPw"                   # Telegram Bot Token
-      chat_id: "290569556"                     # Telegram Chat ID
+      chat_id: "clybb2_test_bot"                     # Telegram Chat ID
 
     email:
       from: ""                        # 发件人邮箱地址
@@ -392,7 +404,7 @@ ai:
 # 模型配置见上方 ai 配置段
 # ===============================================================
 ai_analysis:
-  enabled: false                     # 是否启用 AI 分析（总开关）
+  enabled: true                     # 是否启用 AI 分析（总开关）
                                     # ⚠️ 开启调度系统后，此项仍为总开关：
                                     #   false → 永远不分析（无论调度怎么设置）
                                     #   true  → 由调度的 analyze 字段控制何时分析
@@ -475,13 +487,13 @@ advanced:
 
   # 热榜爬虫技术参数
   crawler:
-    request_interval: 3600000            # 请求间隔（毫秒）
+    request_interval: 2000            # 请求间隔（毫秒）
     use_proxy: false                  # 是否启用代理
     default_proxy: "http://127.0.0.1:10801"
 
   # RSS 设置
   rss:
-    request_interval: 3600000         # 请求间隔（毫秒）
+    request_interval: 1000            # 请求间隔（毫秒）
     timeout: 15                       # 请求超时（秒）
     use_proxy: false                  # 是否使用代理
     proxy_url: ""                     # RSS 专属代理（留空则使用 crawler.default_proxy）
