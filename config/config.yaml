@@ -61,6 +61,9 @@ platforms:
       name: "财联社"
     - id: 36kr-quick
       name: "36氪"
+    - id: wallstreetcn-quick
+      name: "wallstreetcn-quick"
+      
        # ...existing code...
 
 
@@ -174,7 +177,7 @@ display:
     - ai_analysis                       # 5️⃣ AI 分析区域
   regions:
     new_items: false # 新增热点区域（含热榜新增 + RSS 新增）
-    hotlist: false # 热榜区域（关键词匹配的热点新闻）
+    hotlist: true # 热榜区域（关键词匹配的热点新闻）
     rss: false # RSS 订阅区域
     standalone: false # 独立展示区（办实事/RSS，不受关键词过滤）
     ai_analysis: false # AI 分析区域
@@ -223,7 +226,9 @@ notification:
       msg_type: "markdown"            # 消息类型：markdown(群机器人) | text(个人微信应用)
 
     telegram:
-      bot_token: "6300921956:AAHwT-FhyiVXipdT_BIQHavPs-6rie5LpPw"                   # Telegram Bot Token
+      bot_token: "5148069811:AAH__3pMgEF3XCmskjRS9JOiXCF2Eq4n71s" #clybb_bot
+      #bot_token: "6026135021:AAGPmBPq_3c_vm9KtdFjUZmjWDSnF368hfU" #clybb2_bot
+      #bot_token: "6300921956:AAHwT-FhyiVXipdT_BIQHavPs-6rie5LpPw"                   # Testing Acct
       chat_id: "290569556"                     # Telegram Chat ID
 
     email:
