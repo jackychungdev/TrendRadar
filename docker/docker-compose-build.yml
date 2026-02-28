@@ -3,7 +3,7 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile
-    image: mingtosomeone/trendradar:1.0.3
+    image: mingtosomeone/trendradar:1.1.0
     container_name: trendradar
     restart: unless-stopped
     ports:

@@ -147,6 +147,37 @@
 # ───────────────────────────────────────────────────────────────
 
 [WORD_GROUPS]
-[AI美股]
-美股
-(?=.AI|.人工智能|.OpenAI|.\bOpenAI\b|.\bSam\sAltman\b|.\bGPT-?\d\b|.\bDALL·E\b|.\bSora\b|.\bWhisper\b|.\bChatGPT\b)
+
+# ═══════════════════════════════════════════════════════════════
+#                         科技领域
+# ═══════════════════════════════════════════════════════════════
+[AI 相关]
+/(?<![a-zA-Z])ai(?![a-zA-Z])/
+人工智能
+
+[AI Stock]
+/(?<![a-zA-Z])NVDA(?![a-zA-Z])/
+/(?<![a-zA-Z])MSFT(?![a-zA-Z])/
+/(?<![a-zA-Z])GOOGL(?![a-zA-Z])/
+/(?<![a-zA-Z])AMZN(?![a-zA-Z])/
+/(?<![a-zA-Z])META(?![a-zA-Z])/
+/(?<![a-zA-Z])AAPL(?![a-zA-Z])/
+/(?<![a-zA-Z])AVGO(?![a-zA-Z])/
+/(?<![a-zA-Z])AMD(?![a-zA-Z])/
+/(?<![a-zA-Z])PLTR(?![a-zA-Z])/
+/(?<![a-zA-Z])TSLA(?![a-zA-Z])/
+/(?<![a-zA-Z])TSM(?![a-zA-Z])/
+/(?<![a-zA-Z])ORCL(?![a-zA-Z])/
+/(?<![a-zA-Z])CRM(?![a-zA-Z])/
+/(?<![a-zA-Z])CRWD(?![a-zA-Z])/
+/(?<![a-zA-Z])FTNT(?![a-zA-Z])/
+/(?<![a-zA-Z])CRWV(?![a-zA-Z])/
+/(?<![a-zA-Z])INTC(?![a-zA-Z])/
+/(?<![a-zA-Z])MU(?![a-zA-Z])/
+/(?<![a-zA-Z])ADBE(?![a-zA-Z])/
+/(?<![a-zA-Z])AMAT(?![a-zA-Z])/
+
+[芯片]
+芯片
+光刻机
+半导体

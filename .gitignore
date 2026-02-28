@@ -1,1 +1,13 @@
 output/*
+venv/*
+venv-1/*
+trendradar/utils/__pycache__/*
+trendradar/__pycache__/*
+trendradar/ai/*
+trendradar/core/*
+trendradar/crawler/*
+trendradar/notification/*
+trendradar/report/*
+trendradar/storage/*
+trendradar/utils/*
+index.html

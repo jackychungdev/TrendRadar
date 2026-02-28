@@ -963,6 +963,25 @@ frequency_words.txt 文件增加了一个【必须词】功能，使用 + 号
 
 > 💡 RSS 使用与热榜相同的 `frequency_words.txt` 进行关键词过滤
 
+**📌 新增 RSS 源**：
+
+| 源名称 | ID | URL | 说明 |
+|-------|----|-----|------|
+| Investing.com | investing-com | https://www.investing.com/rss/news.rss | 全球财经新闻和市场分析 |
+
+**配置示例**：
+```yaml
+rss:
+  feeds:
+    - id: "investing-com"
+      name: "Investing.com"
+      url: "https://www.investing.com/rss/news.rss"
+      # enabled: true               # 默认启用
+      # max_age_days: 1             # 只推送1天内的文章
+```
+
+> 💡 RSS 使用与热榜相同的 `frequency_words.txt` 进行关键词过滤
+
 ### **可视化配置编辑器**
 
 提供基于 Web 的图形化配置界面，无需手动编辑 YAML 文件，通过表单即可完成所有配置项的修改与导出。

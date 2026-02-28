@@ -220,6 +220,15 @@ class NewsAnalyzer:
         # 创建应用上下文
         self.ctx = AppContext(config)
 
+        # load frequency words and print group names at startup
+        try:
+            wg, fw, gf = self.ctx.load_frequency_words()
+            group_names = [g.get("display_name") or "" for g in wg]
+            print(f"关注词组 ({len(group_names)}) : {', '.join(group_names)}")
+        except Exception as e:
+            # 如果加载失败也不要阻塞程序
+            print(f"警告：加载关注词组时出错：{e}")
+
         self.request_interval = self.ctx.config["REQUEST_INTERVAL"]
         self.report_mode = self.ctx.config["REPORT_MODE"]
         self.rank_threshold = self.ctx.rank_threshold
@@ -1009,6 +1018,13 @@ class NewsAnalyzer:
         print(
             f"配置的监控平台: {[p.get('name', p['id']) for p in self.ctx.platforms]}"
         )
+        # 添加 RSS 源日志
+        rss_feeds = self.ctx.rss_feeds if hasattr(self.ctx, 'rss_feeds') else []
+        if rss_feeds:
+            print("配置的 RSS 源:")
+            for feed in rss_feeds:
+                feed_name = feed.get('name', '')
+                print(f"  - {feed_name}")
         print(f"开始爬取数据，请求间隔 {self.request_interval} 毫秒")
         Path("output").mkdir(parents=True, exist_ok=True)
 

@@ -873,7 +873,7 @@ frequency_words.txt file added **required word** feature, using + sign
 
 1. Feishu message display effect optimized
 
-</details>
+```
 
 <br>
 
@@ -904,6 +904,23 @@ Supports RSS/Atom feed crawling, keyword-based grouping and statistics (consiste
 - **Unified Format**: RSS and trending use the same keyword matching and display format
 - **Simple Config**: Add RSS sources directly in `config.yaml`
 - **Merged Push**: Trending and RSS are merged into a single notification
+
+**📌 New RSS Sources**:
+
+| Source Name | ID | URL | Description |
+|------------|----|-----|-------------|
+| Investing.com | investing-com | https://www.investing.com/rss/news.rss | Global financial news and market analysis |
+
+**Configuration Example**:
+```yaml
+rss:
+  feeds:
+    - id: "investing-com"
+      name: "Investing.com"
+      url: "https://www.investing.com/rss/news.rss"
+      # enabled: true               # Enabled by default
+      # max_age_days: 1             # Only push articles within 1 day
+```
 
 > 💡 RSS uses the same `frequency_words.txt` for keyword filtering as trending
 
