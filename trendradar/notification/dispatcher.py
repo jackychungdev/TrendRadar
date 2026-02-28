@@ -443,6 +443,26 @@ class NotificationDispatcher:
         if not display_regions.get("HOTLIST", True):
             report_data = {"stats": [], "failed_ids": [], "new_titles": [], "id_to_name": {}}
 
+        # Check if there are new updates - only send if there are new items
+        has_new_updates = False
+        
+        # Check for new hotlist titles
+        if report_data.get("new_titles") and len(report_data["new_titles"]) > 0:
+            total_new_count = sum(len(source.get("titles", [])) for source in report_data["new_titles"])
+            if total_new_count > 0:
+                has_new_updates = True
+        
+        # Check for new RSS items
+        if rss_new_items and len(rss_new_items) > 0:
+            total_rss_new_count = sum(len(stat.get("titles", [])) for stat in rss_new_items)
+            if total_rss_new_count > 0:
+                has_new_updates = True
+        
+        # Only proceed with sending if there are new updates
+        if not has_new_updates:
+            print("Telegram: 没有新更新，跳过发送")
+            return True  # Return True to indicate successful "skip"
+
         telegram_tokens = parse_multi_account_config(self.config["TELEGRAM_BOT_TOKEN"])
         telegram_chat_ids = parse_multi_account_config(self.config["TELEGRAM_CHAT_ID"])
 
@@ -992,6 +1012,12 @@ class NotificationDispatcher:
 
         if not tokens or not chat_ids:
             return False
+
+        # For RSS notifications, we assume the content represents new items
+        # If content is empty or just contains standard headers, skip sending
+        if not content or len(content.strip()) == 0:
+            print("Telegram RSS: 没有新内容，跳过发送")
+            return True  # Return True to indicate successful "skip"
 
         results = []
         for i in range(min(len(tokens), len(chat_ids), self.max_accounts)):
