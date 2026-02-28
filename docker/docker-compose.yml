@@ -1,6 +1,6 @@
 ﻿services:
   trendradar:
-    image: mingtosomeone/trendradar:1.1.1
+    image: mingtosomeone/trendradar:1.1.2
     init: true
     container_name: trendradar
     restart: unless-stopped
