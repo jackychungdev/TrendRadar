@@ -130,3 +130,9 @@ if %errorlevel% equ 1 (
 echo.
 echo Docker version increment completed!
 echo ========================================
+docker-compose -f docker-compose-build.yml build
+@REM docker-compose -f docker-compose-build.yml build --no-cache
+
+docker login -u mingtosomeone
+
+docker push mingtosomeone/trendradar:NEW_VERSION

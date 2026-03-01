@@ -37,8 +37,7 @@ echo 2. Run: docker-compose down
 echo.
 
 :: SSH connection with automatic directory change and docker-compose down
-ssh -p %PORT% %USERNAME%@%SERVER_IP% "cd %TARGET_DIR% && pwd && sudo rm -rf /tmp/* && docker-compose down"
+ssh -p %PORT% %USERNAME%@%SERVER_IP% "cd %TARGET_DIR% && pwd && sudo -S rm -rf /tmp/* && docker-compose down"
 
 echo.
 echo Connection closed.
-pause
