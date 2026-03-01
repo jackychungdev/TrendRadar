@@ -226,9 +226,9 @@ notification:
       msg_type: "markdown"            # 消息类型：markdown(群机器人) | text(个人微信应用)
 
     telegram:
-      bot_token: "5148069811:AAH__3pMgEF3XCmskjRS9JOiXCF2Eq4n71s" #clybb_bot
+      #bot_token: "5148069811:AAH__3pMgEF3XCmskjRS9JOiXCF2Eq4n71s" #clybb_bot
       #bot_token: "6026135021:AAGPmBPq_3c_vm9KtdFjUZmjWDSnF368hfU" #clybb2_bot
-      #bot_token: "6300921956:AAHwT-FhyiVXipdT_BIQHavPs-6rie5LpPw"                   # Testing Acct
+      bot_token: "6300921956:AAHwT-FhyiVXipdT_BIQHavPs-6rie5LpPw"                   # Testing Acct
       chat_id: "290569556"                     # Telegram Chat ID
 
     email:

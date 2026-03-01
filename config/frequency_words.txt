@@ -156,26 +156,26 @@
 人工智能
 
 [AI Stock]
-/(?<![a-zA-Z])NVDA(?![a-zA-Z])/
-/(?<![a-zA-Z])MSFT(?![a-zA-Z])/
-/(?<![a-zA-Z])GOOGL(?![a-zA-Z])/
-/(?<![a-zA-Z])AMZN(?![a-zA-Z])/
-/(?<![a-zA-Z])META(?![a-zA-Z])/
-/(?<![a-zA-Z])AAPL(?![a-zA-Z])/
-/(?<![a-zA-Z])AVGO(?![a-zA-Z])/
-/(?<![a-zA-Z])AMD(?![a-zA-Z])/
-/(?<![a-zA-Z])PLTR(?![a-zA-Z])/
-/(?<![a-zA-Z])TSLA(?![a-zA-Z])/
-/(?<![a-zA-Z])TSM(?![a-zA-Z])/
-/(?<![a-zA-Z])ORCL(?![a-zA-Z])/
-/(?<![a-zA-Z])CRM(?![a-zA-Z])/
-/(?<![a-zA-Z])CRWD(?![a-zA-Z])/
-/(?<![a-zA-Z])FTNT(?![a-zA-Z])/
-/(?<![a-zA-Z])CRWV(?![a-zA-Z])/
-/(?<![a-zA-Z])INTC(?![a-zA-Z])/
-/(?<![a-zA-Z])MU(?![a-zA-Z])/
-/(?<![a-zA-Z])ADBE(?![a-zA-Z])/
-/(?<![a-zA-Z])AMAT(?![a-zA-Z])/
+/(?<![a-zA-Z])(NVDA|英伟达)(?![a-zA-Z])/ => 英伟达
+/(?<![a-zA-Z])(MSFT|微软)(?![a-zA-Z])/ => 微软
+/(?<![a-zA-Z])(GOOGL|谷歌)(?![a-zA-Z])/ => 谷歌
+/(?<![a-zA-Z])(AMZN|亚马逊)(?![a-zA-Z])/ => 亚马逊
+/(?<![a-zA-Z])(META|Meta)(?![a-zA-Z])/ => Meta
+/(?<![a-zA-Z])(AAPL|苹果)(?![a-zA-Z])/ => 苹果
+/(?<![a-zA-Z])(AVGO|博通)(?![a-zA-Z])/ => 博通
+/(?<![a-zA-Z])(AMD|超威半导体)(?![a-zA-Z])/ => 超威半导体
+/(?<![a-zA-Z])(PLTR|Palantir)(?![a-zA-Z])/ => Palantir
+/(?<![a-zA-Z])(TSLA|特斯拉)(?![a-zA-Z])/ => 特斯拉
+/(?<![a-zA-Z])(TSM|台积电)(?![a-zA-Z])/ => 台积电
+/(?<![a-zA-Z])(ORCL|甲骨文)(?![a-zA-Z])/ => 甲骨文
+/(?<![a-zA-Z])(CRM|Salesforce)(?![a-zA-Z])/ => Salesforce
+/(?<![a-zA-Z])(CRWD|CrowdStrike)(?![a-zA-Z])/ => CrowdStrike
+/(?<![a-zA-Z])(FTNT|Fortinet)(?![a-zA-Z])/ => Fortinet
+/(?<![a-zA-Z])(CRWV|CrowdStrike)(?![a-zA-Z])/ => CrowdStrike
+/(?<![a-zA-Z])(INTC|英特尔)(?![a-zA-Z])/ => 英特尔
+/(?<![a-zA-Z])(MU|美光科技)(?![a-zA-Z])/ => 美光科技
+/(?<![a-zA-Z])(ADBE|Adobe)(?![a-zA-Z])/ => Adobe
+/(?<![a-zA-Z])(AMAT|应用材料)(?![a-zA-Z])/ => 应用材料
 
 [芯片]
 芯片
